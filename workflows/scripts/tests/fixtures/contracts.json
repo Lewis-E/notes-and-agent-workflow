@@ -1,0 +1,21 @@
+{
+  "orderedGates": [
+    "started",
+    "human-context",
+    "research",
+    "context-and-requirements",
+    "plan",
+    "plan-reviewed",
+    "plan-approved",
+    "implementation",
+    "final-review",
+    "final-acceptance",
+    "finished"
+  ],
+  "runtimeStates": [
+    "needs-human",
+    "paused",
+    "failed",
+    "cancelled"
+  ]
+}

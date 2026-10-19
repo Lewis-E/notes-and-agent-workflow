@@ -1,0 +1,9 @@
+work/*
+!work/.gitkeep
+/work-archive/
+**/__pycache__/
+*.py[cod]
+.DS_Store
+.pi-subagents
+.claude
+.codex

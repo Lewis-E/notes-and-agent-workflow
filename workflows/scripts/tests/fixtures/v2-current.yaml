@@ -1,0 +1,21 @@
+schema-version: 2
+name: transition-fixture
+kind: workflow
+directories:
+  - example-org/example
+status:
+  started: true
+  human-context: true
+  research: false
+  context-and-requirements: false
+  plan: false
+  plan-reviewed: false
+  plan-approved: false
+  implementation: false
+  final-review: false
+  final-acceptance: false
+  finished: false
+current-phase: human-context
+transition-support:
+  gate: research
+  current: true

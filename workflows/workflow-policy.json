@@ -1,0 +1,7 @@
+{
+  "schema-version": 1,
+  "orchestration": {
+    "safe-checkpoint-minutes": 8,
+    "feedback-deadline-minutes": 10
+  }
+}

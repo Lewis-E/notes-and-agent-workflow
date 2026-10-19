@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "work.schema.json",
+  "title": "Work Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema-version",
+    "name",
+    "kind",
+    "directories",
+    "status",
+    "current-phase",
+    "transition-support"
+  ],
+  "properties": {
+    "schema-version": {
+      "const": 2,
+      "description": "Version of the work item schema."
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable identifier matching the directory name under work/."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "ticket",
+        "epic",
+        "bug",
+        "feature",
+        "product",
+        "research",
+        "workflow"
+      ],
+      "description": "The type of work item."
+    },
+    "ticket": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional URL for the ticket or epic associated with this work item."
+    },
+    "directories": {
+      "type": "array",
+      "description": "Directories affected by this work item.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "started",
+        "human-context",
+        "research",
+        "context-and-requirements",
+        "plan",
+        "plan-reviewed",
+        "plan-approved",
+        "implementation",
+        "final-review",
+        "final-acceptance",
+        "finished"
+      ],
+      "properties": {
+        "started": { "type": "boolean" },
+        "human-context": { "type": "boolean" },
+        "research": { "type": "boolean" },
+        "context-and-requirements": { "type": "boolean" },
+        "plan": { "type": "boolean" },
+        "plan-reviewed": { "type": "boolean" },
+        "plan-approved": { "type": "boolean" },
+        "implementation": { "type": "boolean" },
+        "final-review": { "type": "boolean" },
+        "final-acceptance": { "type": "boolean" },
+        "finished": { "type": "boolean" }
+      }
+    },
+    "current-phase": {
+      "type": "string",
+      "enum": [
+        "started",
+        "human-context",
+        "research",
+        "context-and-requirements",
+        "plan",
+        "plan-reviewed",
+        "plan-approved",
+        "implementation",
+        "final-review",
+        "final-acceptance",
+        "finished"
+      ],
+      "description": "The lifecycle phase currently in progress."
+    },
+    "runtime-state": {
+      "type": "string",
+      "enum": [
+        "needs-human",
+        "paused",
+        "failed",
+        "cancelled"
+      ],
+      "description": "An exceptional runtime state interrupting normal lifecycle progress."
+    },
+    "transition-support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate", "current"],
+      "properties": {
+        "gate": {
+          "type": "string",
+          "enum": [
+            "started",
+            "human-context",
+            "research",
+            "context-and-requirements",
+            "plan",
+            "plan-reviewed",
+            "plan-approved",
+            "implementation",
+            "final-review",
+            "final-acceptance",
+            "finished"
+          ]
+        },
+        "current": { "type": "boolean" }
+      }
+    }
+  }
+}

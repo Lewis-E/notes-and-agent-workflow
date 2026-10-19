@@ -1,0 +1,33 @@
+{
+  "schema-version": 1,
+  "bindings": {
+    "researcher": "researcher",
+    "worker": "worker",
+    "plan-reviewer": "plan-reviewer",
+    "code-reviewer": "code-reviewer"
+  },
+  "capabilities": {
+    "researcher": [
+      "source-discovery",
+      "source-evaluation",
+      "citation-synthesis"
+    ],
+    "worker": [
+      "implementation",
+      "verification",
+      "checkpoint-handoff"
+    ],
+    "plan-reviewer": [
+      "plan-review",
+      "requirements-traceability",
+      "verification-review"
+    ],
+    "code-reviewer": [
+      "code-review",
+      "behavioral-correctness",
+      "security-review",
+      "git-ref-inspection",
+      "prepared-diff-inspection"
+    ]
+  }
+}
