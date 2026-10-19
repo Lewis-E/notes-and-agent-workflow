@@ -1,6 +1,7 @@
 work/*
 !work/.gitkeep
-/work-archive/
+/work-archive/*
+!/work-archive/.gitkeep
 **/__pycache__/
 *.py[cod]
 .DS_Store

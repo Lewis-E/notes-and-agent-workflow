@@ -4,7 +4,7 @@ This repository is a notes directory for agent-assisted development. Pi workflow
 
 - [`AGENTS.md`](AGENTS.md) describes how the notes directory and its work repositories are organized.
 - [`workflows/`](workflows/) is the Pi package with the lifecycle skills, subagents, and the `work-yaml` helper. Its [README](workflows/README.md) covers dependencies and the lifecycle.
-- `work/` holds one nested Git repository per piece of work. It starts empty.
+- `work/` holds one nested Git repository per piece of work, and `work-archive/` holds finished ones. Both start empty.
 
 ## Install
 

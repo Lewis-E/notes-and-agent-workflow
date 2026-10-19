@@ -25,7 +25,7 @@ Workflow state is recorded in `work.yaml`. `AGENTS.md` contains only the project
 
 A work repository provides local durable history, not backup. Remotes are optional and must never be created, pushed, or published automatically. Work repositories must not contain secrets or downloaded credentials. Workflow commands must address the nested repository explicitly, such as `git -C work/<name> status`, because the parent repository ignores `work/*` and cannot report nested changes.
 
-Move finished work repositories to `work-archive/<name>`. The parent repository ignores the entire `work-archive/` directory, so archived projects retain their local history without appearing in this repository's status.
+Move finished work repositories to `work-archive/<name>`. The parent repository ignores everything in `work-archive/` except its placeholder, so archived projects retain their local history without appearing in this repository's status.
 
 ## Workflows
 - Subagent sessions represent useful context boundaries, not mandatory handoffs. Keep work in the parent when delegation would add more coordination than speed or insight.
